@@ -1,0 +1,55 @@
+---
+import { content, type Lang } from '../content/site';
+
+export interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = content[lang];
+const otherLangPath = lang === 'zh' ? '/en/' : '/zh/';
+const otherLangLabel = lang === 'zh' ? 'English' : '简体中文';
+const brandName = lang === 'zh' ? '烟台众昇金属结构' : 'Yantai Ston Metal';
+const brandSub = lang === 'zh' ? 'Yantai Ston Metal' : '烟台众昇金属结构';
+---
+
+<nav class="navbar">
+  <div class="container">
+    <a class="brand" href={`/${lang}/`} aria-label={brandName}>
+      <img src="/img/logo.ico" alt="" width="32" height="32" />
+      <span>
+        {brandName}
+        <span class="brand-sub">{brandSub}</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      {c.nav.map(item => (
+        <li><a href={`#${item.id}`}>{item.label}</a></li>
+      ))}
+      <li><a class="lang-switch" href={otherLangPath}>{otherLangLabel}</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script is:inline>
+  (function() {
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function() {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // close on link click (mobile)
+    links.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>

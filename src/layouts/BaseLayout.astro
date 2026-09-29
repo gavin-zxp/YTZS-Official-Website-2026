@@ -1,0 +1,86 @@
+---
+import { content, type Lang } from '../content/site';
+
+export interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const c = content[lang];
+const otherLang = lang === 'zh' ? 'en' : 'zh';
+const otherLangPath = lang === 'zh' ? '/en/' : '/zh/';
+const currentPath = lang === 'zh' ? '/zh/' : '/en/';
+
+// Organization JSON-LD for SEO
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Yantai Ston Metal Co., Ltd.',
+  alternateName: lang === 'zh' ? '烟台众昇金属结构有限公司' : 'Yantai Ston Metal Co., Ltd.',
+  url: 'https://www.stonmetal.cn',
+  logo: 'https://www.stonmetal.cn/img/logo.ico',
+  description: c.metaDescription,
+  email: 'li.huipeng@stonmetal.cn',
+  telephone: '+86-535-2165-218',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'No.11 Songshan Rd., Sanhexinghaihuayuan, Rm.3122',
+    addressLocality: 'Yantai',
+    addressRegion: 'Shandong',
+    postalCode: '264006',
+    addressCountry: 'CN',
+  },
+};
+---
+
+<!DOCTYPE html>
+<html lang={c.htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="renderer" content="webkit" />
+    <title>{c.title}</title>
+    <meta name="description" content={c.metaDescription} />
+    <link rel="canonical" href={`https://www.stonmetal.cn${currentPath}`} />
+    <link rel="alternate" hreflang="zh-CN" href="https://www.stonmetal.cn/zh/" />
+    <link rel="alternate" hreflang="en" href="https://www.stonmetal.cn/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.stonmetal.cn/" />
+    <link rel="icon" href="/img/logo.ico" type="image/x-icon" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={c.title} />
+    <meta property="og:description" content={c.metaDescription} />
+    <meta property="og:url" content={`https://www.stonmetal.cn${currentPath}`} />
+    <meta property="og:image" content="https://www.stonmetal.cn/img/steel_grating.jpg" />
+    <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'zh' ? 'en_US' : 'zh_CN'} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={c.title} />
+    <meta name="twitter:description" content={c.metaDescription} />
+    <meta name="twitter:image" content="https://www.stonmetal.cn/img/steel_grating.jpg" />
+
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11440963960"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11440963960',{'allow_enhanced_conversions':true});
+    </script> -->
+
+    <!-- Baidu verification (preserved from legacy) -->
+    <meta name="baidu-site-verification" content="codeva-AuJGjsSvmX" />
+
+    <!-- JSON-LD Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify(org)} />
+
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

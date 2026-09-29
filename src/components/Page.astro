@@ -1,0 +1,315 @@
+---
+import { content, type Lang } from '../content/site';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+
+export interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = content[lang];
+const otherLangPath = lang === 'zh' ? '/en/' : '/zh/';
+const heroEnterLabel = lang === 'zh' ? '进入中文站' : 'Enter English';
+const heroScrollLabel = lang === 'zh' ? '了解我们' : 'Learn More';
+// Google Apps Script endpoint (preserved from legacy)
+const formAction = 'https://script.google.com/macros/s/AKfycbyr9hw2noUNmfEQysRhsgulclvfvmJapLFf8UmKjdol1YxM5SRo6aSAbPgy6iqxeXpxjw/exec';
+---
+
+<Navbar lang={lang} />
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div>
+    <h1>{c.hero.title}</h1>
+    <p class="subtitle">{c.hero.subtitle}</p>
+    <div class="hero-divider"></div>
+    <div class="hero-actions">
+      <a href="#AboutUs" class="btn btn-primary">{heroScrollLabel}</a>
+      <a href={otherLangPath} class="btn">{c.hero.langBtn}</a>
+    </div>
+  </div>
+</header>
+
+<!-- About -->
+<section class="section" id="AboutUs">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.about.title}</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <img src={c.about.img} alt={c.about.imgAlt} loading="lazy" />
+      </div>
+      <div class="about-text">
+        {c.about.paragraphs.map(p => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section section-alt" id="Values">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.values.title}</h2>
+    </div>
+    <p class="values-intro">{c.values.intro}</p>
+    <div class="values-grid">
+      {c.values.items.map(v => (
+        <div class="value-card">
+          <h3>{v.title}</h3>
+          <p>{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section" id="Team">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.team.title}</h2>
+    </div>
+    <div class="team-grid">
+      <div>
+        <p class="team-intro">{c.team.intro}</p>
+        {c.team.categories.map(cat => (
+          <div class="team-category">
+            <div class="label">{cat.label}</div>
+            <div class="members">{cat.members}</div>
+          </div>
+        ))}
+      </div>
+      <div>
+        <img src={c.team.img} alt={c.team.imgAlt} loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- History -->
+<section class="section section-alt" id="History">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.history.title}</h2>
+    </div>
+    <div class="timeline">
+      {c.history.timeline.map(t => (
+        <div class="timeline-item">
+          <div class="year">{t.year}</div>
+          <div class="title">{t.title}</div>
+          <div class="desc">{t.desc}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Marketing -->
+<section class="section" id="Marketing">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.marketing.title}</h2>
+    </div>
+    <div class="marketing-grid">
+      <div>
+        <img src={c.marketing.img} alt={c.marketing.imgAlt} loading="lazy" />
+      </div>
+      <div>
+        <p class="team-intro">{c.marketing.intro}</p>
+        <ul class="events-list">
+          {c.marketing.events.map(e => (
+            <li>
+              <span class="name">{e.name}</span>
+              <span class="year">{e.year}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="section section-alt" id="Products">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.products.title}</h2>
+    </div>
+    <p class="products-intro">{c.products.intro}</p>
+    <div class="products-grid">
+      {c.products.items.map(p => (
+        <div class="product-card">
+          <div class="img-wrap">
+            <img src={p.img} alt={p.alt} loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>{p.name}</h3>
+            <p>{p.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Records -->
+<section class="section" id="Records">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.records.title}</h2>
+    </div>
+    <p class="records-intro">{c.records.intro}</p>
+    <div class="records-table-wrap">
+      <table class="records-table">
+        <thead>
+          <tr>{c.records.tableHeaders.map(h => <th>{h}</th>)}</tr>
+        </thead>
+        <tbody>
+          {c.records.rows.map(r => (
+            <tr>
+              <td>{r.customer}</td>
+              <td>{r.project}</td>
+              <td>{r.products}</td>
+              <td>{r.location}</td>
+              <td>{r.year}</td>
+              <td class="qty">{r.qty}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div class="records-gallery">
+      {c.records.gallery.map(g => (
+        <div class="gallery-item">
+          <img src={g.img} alt={g.caption} loading="lazy" />
+          <div class="caption">{g.caption}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- QC -->
+<section class="section section-alt" id="QC">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.qc.title}</h2>
+    </div>
+    <p class="team-intro">{c.qc.intro}</p>
+    <div class="qc-grid">
+      {c.qc.items.map(item => (
+        <div class="qc-card">
+          <h3>{item.name}</h3>
+          <p>{item.desc}</p>
+        </div>
+      ))}
+    </div>
+    <img class="qc-cert" src={c.qc.certImg} alt={c.qc.certAlt} loading="lazy" />
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="Contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.contact.title}</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <ul class="contact-list">
+          {c.contact.items.map(item => (
+            <li>
+              <span class="label">{item.label}</span>
+              <span class="value">{item.value}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <img src={c.contact.mapImg} alt={c.contact.mapAlt} loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Message Form -->
+<section class="section section-alt" id="Message">
+  <div class="container">
+    <div class="section-header">
+      <span class="icon"></span>
+      <h2>{c.message.title}</h2>
+    </div>
+    <div class="message-wrap">
+      <form class="gform" method="post" action={formAction}>
+        {c.message.fields.map(f => (
+          <div class="form-group">
+            <label for={`f_${f.name}`}>{f.label}</label>
+            {f.type === 'textarea' ? (
+              <textarea id={`f_${f.name}`} name={f.name} class="form-control" required={f.required}></textarea>
+            ) : (
+              <input id={`f_${f.name}`} type={f.type as astroHTML.JSX.HTMLInputTypeAttribute} name={f.name} class="form-control" required={f.required} />
+            )}
+          </div>
+        ))}
+        <!-- Honeypot anti-spam -->
+        <div class="honeypot" aria-hidden="true">
+          <label>Leave this empty: <input name="honeypot" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <button type="submit" class="btn-submit">{c.message.submitBtn}</button>
+      </form>
+      <div class="form-thankyou" id="thankyou">{c.message.thankYou}</div>
+    </div>
+  </div>
+</section>
+
+<Footer lang={lang} />
+
+<script is:inline>
+  (function() {
+    var form = document.querySelector('form.gform');
+    var thankyou = document.getElementById('thankyou');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var honeypot = data.get('honeypot');
+      if (honeypot) return; // spam bot
+      var btn = form.querySelector('.btn-submit');
+      if (btn) btn.disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        body: data
+      }).then(function() {
+        form.reset();
+        if (thankyou) thankyou.style.display = 'block';
+        if (btn) btn.disabled = false;
+      }).catch(function() {
+        form.submit(); // fallback
+      });
+    });
+
+    // Google Ads conversion tracking
+    document.querySelectorAll('form.gform .btn-submit').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var name = document.querySelector('[name="fullname"]');
+        var email = document.querySelector('[name="email"]');
+        var msg = document.querySelector('[name="message"]');
+        if (!name || !email || !msg) return;
+        var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+        if (name.value !== '' && msg.value !== '' && email.value !== '' && email.value.match(mailformat)) {
+          gtag('set','user_data',{"email" : email.value});
+          gtag('event', 'conversion', {'send_to': 'AW-11440963960/ZqaQCOrbuf8YEPiCvc8q'});
+        }
+      });
+    });
+  })();
+</script>

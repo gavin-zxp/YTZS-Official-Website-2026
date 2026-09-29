@@ -1,0 +1,43 @@
+---
+// Root: language detection redirect (meta refresh + JS fallback, no empty body)
+// Crawlers see real content via hreflang; users get fast redirect.
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yantai Ston Metal Co., Ltd. | 烟台众昇金属</title>
+    <meta name="description" content="Professional supplier of secondary and tertiary steel structures for offshore FPSO/FLNG, vessel and mining projects. Steel grating, handrails, platforms, ladders, pipe supports. 烟台众昇金属结构有限公司。" />
+    <link rel="canonical" href="https://www.stonmetal.cn/en/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://www.stonmetal.cn/zh/" />
+    <link rel="alternate" hreflang="en" href="https://www.stonmetal.cn/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.stonmetal.cn/en/" />
+    <link rel="icon" href="/img/logo.ico" type="image/x-icon" />
+    <meta http-equiv="refresh" content="0; url=/en/" />
+    <script is:inline>
+      (function() {
+        var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        var target = lang.indexOf('zh') === 0 ? '/zh/' : '/en/';
+        window.location.replace(target);
+      })();
+    </script>
+    <style>
+      body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; text-align: center; padding: 60px 20px; background: #f8f9fa; color: #1a1a1a; }
+      .box { max-width: 520px; margin: 0 auto; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+      h1 { font-size: 22px; margin-bottom: 8px; color: #0d2b4e; }
+      p { color: #6c757d; margin-bottom: 24px; }
+      a { display: inline-block; margin: 0 8px; padding: 10px 24px; border: 2px solid #1a6fb0; border-radius: 999px; color: #1a6fb0; text-decoration: none; }
+      a:hover { background: #1a6fb0; color: #fff; }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Yantai Ston Metal Co., Ltd.</h1>
+      <p>烟台众昇金属结构有限公司</p>
+      <a href="/zh/">简体中文</a>
+      <a href="/en/">English</a>
+    </div>
+  </body>
+</html>

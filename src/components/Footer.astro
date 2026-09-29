@@ -1,0 +1,15 @@
+---
+import { content, type Lang } from '../content/site';
+
+export interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = content[lang];
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <p class="copyright">&copy; {year} {c.footer.copyright}</p>
+    <p class="copyright">www.stonmetal.cn</p>
+  </div>
+</footer>
