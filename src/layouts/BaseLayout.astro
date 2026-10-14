@@ -7,8 +7,6 @@ export interface Props {
 
 const { lang } = Astro.props;
 const c = content[lang];
-const otherLang = lang === 'zh' ? 'en' : 'zh';
-const otherLangPath = lang === 'zh' ? '/en/' : '/zh/';
 const currentPath = lang === 'zh' ? '/zh/' : '/en/';
 
 // Organization JSON-LD for SEO
@@ -18,7 +16,7 @@ const org = {
   name: 'Yantai Ston Metal Co., Ltd.',
   alternateName: lang === 'zh' ? '烟台众昇金属结构有限公司' : 'Yantai Ston Metal Co., Ltd.',
   url: 'https://www.stonmetal.cn',
-  logo: 'https://www.stonmetal.cn/img/logo.ico',
+  logo: 'https://www.stonmetal.cn/img/json-ld-logo.jpg',
   description: c.metaDescription,
   email: 'li.huipeng@stonmetal.cn',
   telephone: '+86-535-2165-218',

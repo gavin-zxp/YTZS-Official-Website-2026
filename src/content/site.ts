@@ -18,7 +18,6 @@ export interface Content {
   hero: {
     title: string;
     subtitle: string;
-    enterBtn: string;
     langBtn: string;
   };
   about: {
@@ -66,8 +65,17 @@ export interface Content {
     title: string;
     intro: string;
     items: { name: string; desc: string }[];
-    certImg: string;
-    certAlt: string;
+    certsTitle: string;
+    certs: {
+      img: string;
+      alt: string;
+      code: string;
+      name: string;
+      details: string[];
+    }[];
+    certsNote: string;
+    certsPdfLabel: string;
+    certsPdf: string;
   };
   contact: {
     title: string;
@@ -107,7 +115,6 @@ const zh: Content = {
   hero: {
     title: '烟台众昇金属结构有限公司',
     subtitle: '致力于为海工行业制造二类和三类结构件',
-    enterBtn: '进入中文站',
     langBtn: 'English',
   },
   about: {
@@ -218,8 +225,33 @@ const zh: Content = {
       { name: '出厂前抽检 EX Work Inspection', desc: '出厂前最终抽检与尺寸核对。' },
       { name: '指导安装 Instruct Erection', desc: '可提供现场安装指导服务。' },
     ],
-    certImg: '/img/iso_9001.jpg',
-    certAlt: 'ISO 9001 质量管理体系认证证书',
+    certsTitle: '认证证书',
+    certs: [
+      {
+        img: '/img/certs/cert-iso9001-zh.jpg',
+        alt: 'ISO 9001:2015 质量管理体系认证证书',
+        code: 'ISO 9001:2015',
+        name: '质量管理体系认证',
+        details: ['证书编号：25CN34514904Q', '有效期：2025-03-11 至 2028-03-10', '发证机构：ACM International Certification Limited'],
+      },
+      {
+        img: '/img/certs/cert-iso14001-zh.jpg',
+        alt: 'ISO 14001:2015 环境管理体系认证证书',
+        code: 'ISO 14001:2015',
+        name: '环境管理体系认证',
+        details: ['证书编号：24CN34512161E', '有效期：2024-11-05 至 2027-11-04', '发证机构：ACM International Certification Limited'],
+      },
+      {
+        img: '/img/certs/cert-iso45001-zh.jpg',
+        alt: 'ISO 45001:2018 职业健康安全管理体系认证证书',
+        code: 'ISO 45001:2018',
+        name: '职业健康安全管理体系认证',
+        details: ['证书编号：24CN34512162S', '有效期：2024-11-05 至 2027-11-04', '发证机构：ACM International Certification Limited'],
+      },
+    ],
+    certsNote: '认证范围：钢格板和钢结构产品（斜梯、栏杆、结构平台）的加工和销售。证书经 IAF 与 IAS 认可，可在发证机构网站（www.acmchina.com）及中国国家认证认可监督管理委员会网站（www.cnca.gov.cn）查询。',
+    certsPdfLabel: '查看证书原件（PDF）',
+    certsPdf: '/certificates.pdf',
   },
   contact: {
     title: '联系我们',
@@ -228,7 +260,7 @@ const zh: Content = {
       { label: '手机', value: '+86 139 1182 6436' },
       { label: '邮箱', value: 'li.huipeng@stonmetal.cn' },
       { label: '注册地址', value: '山东省烟台市经济技术开发区嵩山路11号三和星海花园3122室' },
-      { label: '车间地址', value: '山东省烟台市福山区门楼工业园丽水路50号' },
+      { label: '车间地址', value: '山东省烟台市芝罘区冰轮路23号内3号厂房' },
       { label: '统一社会信用代码', value: '91370600MA3QHXHD3K' },
     ],
     mapImg: '/img/map_en.png',
@@ -270,7 +302,6 @@ const en: Content = {
   hero: {
     title: 'Yantai Ston Metal Co., Ltd.',
     subtitle: 'Dedicated to fabricating secondary and tertiary steel structures for offshore projects',
-    enterBtn: 'Enter English',
     langBtn: '简体中文',
   },
   about: {
@@ -381,8 +412,33 @@ const en: Content = {
       { name: 'EX Work Inspection', desc: 'Final inspection and dimensional check before delivery.' },
       { name: 'Instruct Erection', desc: 'On-site installation guidance available.' },
     ],
-    certImg: '/img/iso_9001.jpg',
-    certAlt: 'ISO 9001 Quality Management System Certification',
+    certsTitle: 'Certifications',
+    certs: [
+      {
+        img: '/img/certs/cert-iso9001-en.jpg',
+        alt: 'ISO 9001:2015 Quality Management System Certificate',
+        code: 'ISO 9001:2015',
+        name: 'Quality Management System',
+        details: ['Certificate No.: 25CN34514904Q', 'Valid: 2025-03-11 to 2028-03-10', 'Issued by: ACM International Certification Limited'],
+      },
+      {
+        img: '/img/certs/cert-iso14001-en.jpg',
+        alt: 'ISO 14001:2015 Environmental Management System Certificate',
+        code: 'ISO 14001:2015',
+        name: 'Environmental Management System',
+        details: ['Certificate No.: 24CN34512161E', 'Valid: 2024-11-05 to 2027-11-04', 'Issued by: ACM International Certification Limited'],
+      },
+      {
+        img: '/img/certs/cert-iso45001-en.jpg',
+        alt: 'ISO 45001:2018 Occupational Health and Safety Management System Certificate',
+        code: 'ISO 45001:2018',
+        name: 'Occupational Health and Safety Management System',
+        details: ['Certificate No.: 24CN34512162S', 'Valid: 2024-11-05 to 2027-11-04', 'Issued by: ACM International Certification Limited'],
+      },
+    ],
+    certsNote: 'Certification scope: processing and sales of steel grid plate and steel structure products (inclined ladder, railing and structural platform). The certificates are accredited by IAF and IAS and can be verified at www.acmchina.com and www.cnca.gov.cn.',
+    certsPdfLabel: 'View original certificates (PDF)',
+    certsPdf: '/certificates.pdf',
   },
   contact: {
     title: 'Contact Us',
@@ -391,7 +447,7 @@ const en: Content = {
       { label: 'Mob', value: '+86 139 1182 6436' },
       { label: 'Email', value: 'li.huipeng@stonmetal.cn' },
       { label: 'Registered Address', value: 'Rm. 3122, Sanhexinghaihuayuan, No.11 Songshan Rd., Yantai ETDZ, Shandong, China' },
-      { label: 'Workshop', value: 'No.50 Lishui Rd, Menglou Industry Park, Fushan, Yantai, China' },
+      { label: 'Workshop', value: 'No.23, Binglun Road, Zhifu District, Yantai, 264006, Shandong, China.' },
       { label: 'Unified Social Credit No.', value: '91370600MA3QHXHD3K' },
     ],
     mapImg: '/img/map_en.png',

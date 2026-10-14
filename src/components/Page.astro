@@ -7,7 +7,6 @@ export interface Props { lang: Lang }
 const { lang } = Astro.props;
 const c = content[lang];
 const otherLangPath = lang === 'zh' ? '/en/' : '/zh/';
-const heroEnterLabel = lang === 'zh' ? '进入中文站' : 'Enter English';
 const heroScrollLabel = lang === 'zh' ? '了解我们' : 'Learn More';
 // Google Apps Script endpoint (preserved from legacy)
 const formAction = 'https://script.google.com/macros/s/AKfycbyr9hw2noUNmfEQysRhsgulclvfvmJapLFf8UmKjdol1YxM5SRo6aSAbPgy6iqxeXpxjw/exec';
@@ -16,7 +15,7 @@ const formAction = 'https://script.google.com/macros/s/AKfycbyr9hw2noUNmfEQysRhs
 <Navbar lang={lang} />
 
 <!-- Hero -->
-<header class="hero" id="top">
+<header class="hero">
   <div>
     <h1>{c.hero.title}</h1>
     <p class="subtitle">{c.hero.subtitle}</p>
@@ -212,7 +211,25 @@ const formAction = 'https://script.google.com/macros/s/AKfycbyr9hw2noUNmfEQysRhs
         </div>
       ))}
     </div>
-    <img class="qc-cert" src={c.qc.certImg} alt={c.qc.certAlt} loading="lazy" />
+    <h3 class="qc-certs-title">{c.qc.certsTitle}</h3>
+    <div class="qc-certs">
+      {c.qc.certs.map(cert => (
+        <div class="qc-cert-card">
+          <a class="qc-cert-zoom" href={cert.img} target="_blank" rel="noopener" aria-label={cert.alt}>
+            <img src={cert.img} alt={cert.alt} loading="lazy" />
+          </a>
+          <div class="qc-cert-body">
+            <span class="qc-cert-code">{cert.code}</span>
+            <h4>{cert.name}</h4>
+            <ul>
+              {cert.details.map(d => <li>{d}</li>)}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="qc-certs-note">{c.qc.certsNote}</p>
+    <a class="qc-certs-link" href={c.qc.certsPdf} target="_blank" rel="noopener">{c.qc.certsPdfLabel}</a>
   </div>
 </section>
 
@@ -298,18 +315,18 @@ const formAction = 'https://script.google.com/macros/s/AKfycbyr9hw2noUNmfEQysRhs
     });
 
     // Google Ads conversion tracking
-    document.querySelectorAll('form.gform .btn-submit').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var name = document.querySelector('[name="fullname"]');
-        var email = document.querySelector('[name="email"]');
-        var msg = document.querySelector('[name="message"]');
-        if (!name || !email || !msg) return;
-        var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
-        if (name.value !== '' && msg.value !== '' && email.value !== '' && email.value.match(mailformat)) {
-          gtag('set','user_data',{"email" : email.value});
-          gtag('event', 'conversion', {'send_to': 'AW-11440963960/ZqaQCOrbuf8YEPiCvc8q'});
-        }
-      });
-    });
+    // document.querySelectorAll('form.gform .btn-submit').forEach(function(btn) {
+    //   btn.addEventListener('click', function() {
+    //     var name = document.querySelector('[name="fullname"]');
+    //     var email = document.querySelector('[name="email"]');
+    //     var msg = document.querySelector('[name="message"]');
+    //     if (!name || !email || !msg) return;
+    //     var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+    //     if (name.value !== '' && msg.value !== '' && email.value !== '' && email.value.match(mailformat)) {
+    //       gtag('set','user_data',{"email" : email.value});
+    //       gtag('event', 'conversion', {'send_to': 'AW-11440963960/ZqaQCOrbuf8YEPiCvc8q'});
+    //     }
+    //   });
+    // });
   })();
 </script>

@@ -12,5 +12,5 @@ npm-debug.log*
 # macOS
 .DS_Store
 # work/temp
-.trae/work/
+.trae/
 
