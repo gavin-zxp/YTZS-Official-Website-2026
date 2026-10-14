@@ -97,11 +97,12 @@ const zh: Content = {
     { id: 'Values', label: '价值观' },
     { id: 'Team', label: '团队' },
     { id: 'History', label: '历程' },
+    { id: 'Marketing', label: '营销' },
     { id: 'Products', label: '产品' },
-    { id: 'Records', label: '业绩' },
+    // { id: 'Records', label: '业绩' },
     { id: 'QC', label: '质检' },
     { id: 'Contact', label: '联系' },
-    { id: 'Message', label: '留言' },
+    { id: 'Message', label: '留言' }
   ],
   hero: {
     title: '烟台众昇金属结构有限公司',
@@ -112,10 +113,10 @@ const zh: Content = {
   about: {
     title: '关于我们',
     paragraphs: [
-      '怀揣着成为服务工业工程专业的二类或三类钢结构供应商的梦想，三位有行业经验的老同事于2019年创立了烟台众昇金属结构有限公司。',
-      '2024年5月，受创始人刘学昌先生托付，我们的合作伙伴烟台京禾钢结构有限公司加入众昇，团队规模增加到19人。',
+      '怀着成为服务工业工程专业的二类或三类钢结构供应商的梦想，三位有行业经验的老同事于2019年创立了烟台众昇金属结构有限公司。',
+      '2024年5月，受创始人刘学昌先生托付，我们的合作伙伴烟台京禾钢结构有限公司加入众昇，团队规模增加到28人。',
       '自创立伊始，我们即把"人"作为公司最重要的资产。因此，我们在工作中不遗余力的培养和训练员工队伍，并会重点关注能让团队学习并持续提升的项目。',
-      '得益于团队的努力，作为市场中的新进入者，烟台众昇已经在中国和国外的众多项目（主要海工和矿山项目）中完成供货。目前长期合作的客户包括烟台中集来福士、惠生清洁能源、南通捷欣海工、湖南华菱钢铁、澳大利亚Flagship公司。',
+      '得益于团队的努力，作为市场中的新进入者，烟台众昇已经在中国和澳大利亚的众多项目（主要海工和矿山项目）中完成供货，基于这些良好的业绩，我们也得到客户越来越多的认可。',
     ],
     img: '/img/outfitting.jpg',
     imgAlt: '钢格栅、钢护栏、舾装件等轻钢结构产品',
@@ -135,8 +136,8 @@ const zh: Content = {
     intro: '我们拥有一支小而精的团队，平均行业经验10年，多数成员自2020年起与公司共同成长。',
     categories: [
       { label: '管理层', members: '李慧鹏、李梦然' },
-      { label: '项目团队', members: '张婷婷、牟一帆、李仲元、李慧慷、李妤墨' },
-      { label: '车间管理', members: '侯万鹏、田子松' },
+      { label: '项目团队', members: '张婷婷、牟一帆、李慧慷、李妤墨、何世峰、刘兴乾' },
+      { label: '车间管理', members: '侯万鹏' },
     ],
     img: '/img/our_team.jpg',
     imgAlt: '烟台众昇金属结构有限公司团队合影',
@@ -148,8 +149,8 @@ const zh: Content = {
       { year: '2020', title: '尝试进入EPC供应链', desc: '成立第二年遭遇新冠疫情封锁，期间通过厦门一家公司给澳大利亚力拓矿山供应护栏，出口印尼EMI公司格栅和栏杆。' },
       { year: '2021', title: '海工项目的突破', desc: '通过南通惠生重工参与的澳大利亚FMG铁桥项目是我们在海工方面的第一次尝试，供应了澳标球接栏杆和钢格栅。' },
       { year: '2023', title: '持续的团队建设', desc: '作为南通惠生供应商，在其承接的风电安装船和发电船等项目中供应梯子、栏杆、格栅等结构件。' },
-      { year: '2024', title: '兼并扩张', desc: '基于与创始人刘学昌先生长期良好的合作关系，烟台京禾钢结构成为我们的子公司，我们也因此成为中集来福士公司长协供应商。' },
-      { year: '2025', title: '我们继续成长', desc: '在中集来福士的供应份额增长约40%，同时成为南通捷欣海工、湖南华菱钢铁在三类结构件上重要的供应商。' },
+      { year: '2024', title: '兼并扩张', desc: '基于与创始人刘学昌先生长期合作关系，烟台京禾钢结构成为我们的子公司，公司也因此成为烟台中集来福士公司长协供应商。' },
+      { year: '2025', title: '我们继续成长', desc: '除梯子栏杆格栅等产品外，我们的业务拓展到大型设备基座、设备结构等产品，海工业务增长40%，矿山项目增长20%。' },
     ],
   },
   marketing: {
@@ -159,9 +160,11 @@ const zh: Content = {
     imgAlt: '烟台众昇参加国际海工油气展会',
     events: [
       { name: 'GASTECH 海工油气展', year: '2023 · 新加坡' },
-      { name: 'CSSOPE 化工展', year: '2023/2024 · 上海' },
-      { name: 'GASTECH 油气展', year: '2025 · 米兰' },
+      { name: 'CIPPE 北京石油化工展', year: '2024 · 北京' },
+      { name: 'GASTECH 海工油气展', year: '2025 · 米兰' },
       { name: '上海海事展', year: '2025 · 上海' },
+      { name: 'CIPPE 新疆石油化工展', year: '2026 · 新疆' },
+      { name: '中国海洋装备博览会', year: '2026 · 福州' }
     ],
   },
   products: {
@@ -173,9 +176,9 @@ const zh: Content = {
       { name: '平台 Platforms', desc: '设备平台、走道平台、安全平台等。', img: '/img/platform.jpg', alt: '平台结构' },
       { name: '爬梯 Stairs', desc: '带防滑条踏步、斜梯等。', img: '/img/stair.jpg', alt: '爬梯踏步' },
       { name: '直梯 Ladders', desc: '直梯、螺旋梯、带笼直梯、登船梯等。', img: '/img/ladder.jpg', alt: '直梯' },
-      { name: '管道支架 Pipe Supports', desc: '各类管道支架、支吊架等。', img: '/img/pipe_support.jpg', alt: '管道支架' },
-      { name: '电仪支架 Electric Supports', desc: '电仪支架、电缆支架等。', img: '/img/electric_support.jpg', alt: '电仪支架' },
-      { name: '其他轻型结构 Other Light Structures', desc: '船舶舾装件、基座、安全防护结构等。', img: '/img/outfitting.jpg', alt: '其他轻型结构' },
+      { name: '管道支架 & 电仪支架 Pipe Supports & Electrical Supports', desc: '各类管道和电仪支架等。', img: '/img/pipe_support.jpg', alt: '各类管道和电仪支架等' },
+      { name: '设备基座 Equipment Supports', desc: '设备基座等。', img: '/img/equipment_support.jpg', alt: '设备基座' },
+      { name: '其他轻型结构 Other Light Structures', desc: '船舶舾装件、基座、安全防护结构等。', img: '/img/other_light_structures.jpg', alt: '其他轻型结构' }
     ],
   },
   records: {
@@ -257,11 +260,12 @@ const en: Content = {
     { id: 'Values', label: 'Values' },
     { id: 'Team', label: 'Team' },
     { id: 'History', label: 'History' },
+    { id: 'Marketing', label: 'Marketing' },
     { id: 'Products', label: 'Products' },
-    { id: 'Records', label: 'Records' },
+    // { id: 'Records', label: 'Records' },
     { id: 'QC', label: 'QC' },
     { id: 'Contact', label: 'Contact' },
-    { id: 'Message', label: 'Message' },
+    { id: 'Message', label: 'Message' }
   ],
   hero: {
     title: 'Yantai Ston Metal Co., Ltd.',
@@ -273,9 +277,9 @@ const en: Content = {
     title: 'About Us',
     paragraphs: [
       'Bearing the dream of being a professional supplier of secondary and tertiary steel structures serving industry engineering projects, three experienced colleagues founded Yantai Ston Metal Co., Ltd. in Yantai, China in 2019.',
-      'In May 2024, entrusted by founder Mr. Liu Xuechang, our partner Yantai Jinghe Steel Structure Co., Ltd. joined us, enlarging our team to 19 employees.',
+      'In May 2024, entrusted by founder Mr. Liu Xuechang, our partner Yantai Jinghe Steel Structure Co., Ltd. joined us, enlarging our team to 28 employees.',
       'From the beginning, we regard "people" as the most important asset of the company. Therefore, we are dedicated to projects which allow the team to learn and improve continuously.',
-      'Thanks to the efforts of our team, as a new player in the market, we have successfully fulfilled supply in numerous projects (mainly offshore and mining) in China and overseas. Long-term customers include Yantai CIMC Raffles, Wison Clean Energy, Nantong Jiexin Offshore, Hunan Valin, and Flagship International (Australia).',
+      'Thanks to the efforts of our team, as a new player in the market, we have successfully fulfilled the supply in several projects both in China and Australia(mainly offshore and mining projects). Through these records, the company is getting more and more recognition from our customers.',
     ],
     img: '/img/outfitting.jpg',
     imgAlt: 'Steel grating, handrails, outfitting and light steel structures',
@@ -295,8 +299,8 @@ const en: Content = {
     intro: 'We have a small but diligent team, with an average of 10 years of industry experience. Most members have been with us since 2020.',
     categories: [
       { label: 'Management', members: 'Mr. Li Huipeng & Ms. Li Mengran' },
-      { label: 'Project Team', members: 'Ms. Zhang Tingting, Ms. Mu Yifan, Mr. Li Zhongyuan, Mr. Li Huikang, Ms. Li Yumo' },
-      { label: 'Workshop Management', members: 'Mr. Hou Wanpeng & Mr. Tian Zisong' },
+      { label: 'Project Team', members: 'Ms. Zhang Tingting, Ms. Mu Yifan, Mr. Li Huikang, Ms. Li Yumo, Mr. He Shifeng, Mr. Liu Xingqian' },
+      { label: 'Workshop Management', members: 'Mr. Hou Wanpeng' },
     ],
     img: '/img/our_team.jpg',
     imgAlt: 'Yantai Ston Metal team photo',
@@ -309,7 +313,7 @@ const en: Content = {
       { year: '2021', title: 'Offshore Breakthrough', desc: 'FMG Iron Bridge project via Wison Nantong was our first offshore attempt, supplying Australian-standard ball-joint handrails and steel grating.' },
       { year: '2023', title: 'Continuous Team Building', desc: 'As Wison Nantong supplier, supplied ladders, handrails and grating to wind turbine installation vessels and power generation vessels.' },
       { year: '2024', title: 'Merge & Acquisition', desc: 'Based on long-term collaboration with founder Mr. Liu Xuechang, Yantai Jinghe Steel Structure became our subsidiary, making us a strategic supplier of CIMC Raffles.' },
-      { year: '2025', title: 'Continuously Growing', desc: 'Supply share with CIMC Raffles grew ~40%, while becoming an important supplier of tertiary structures for Nantong Jiexin Offshore and Hunan Valin.' },
+      { year: '2025', title: 'Continuously Growing', desc: 'In addition to products such as ladders, railings, and gratings, our business has expanded to include large equipment bases, equipment structures, and other products. Our offshore engineering business has grown by 40%, and our mining projects have grown by 20%.' },
     ],
   },
   marketing: {
@@ -319,9 +323,11 @@ const en: Content = {
     imgAlt: 'Yantai Ston Metal at international offshore oil & gas exhibition',
     events: [
       { name: 'GASTECH', year: '2023 · Singapore' },
-      { name: 'CSSOPE', year: '2023/2024 · Shanghai' },
+      { name: 'CIPPE', year: '2024 · Beijing' },
       { name: 'GASTECH', year: '2025 · Milan' },
-      { name: 'Maritime Exhibition', year: '2025 · Shanghai' },
+      { name: 'Maritime China', year: '2025 · Shanghai' },
+      { name: 'CIPPE', year: '2026 · Xinjiang' },
+      { name: 'Maritime Equipment Expo', year: '2026 · Fuzhou' }
     ],
   },
   products: {
@@ -333,9 +339,9 @@ const en: Content = {
       { name: 'Platforms', desc: 'Equipment platforms, walkway platforms, safety platforms.', img: '/img/platform.jpg', alt: 'Platforms' },
       { name: 'Stairs', desc: 'Stair treads with abrasive nosing, inclined stairs.', img: '/img/stair.jpg', alt: 'Stairs' },
       { name: 'Ladders', desc: 'Vertical ladders, spiral ladders, ladders with cage, boat ladders.', img: '/img/ladder.jpg', alt: 'Ladders' },
-      { name: 'Pipe Supports', desc: 'Various pipe supports, hangers and brackets.', img: '/img/pipe_support.jpg', alt: 'Pipe Supports' },
-      { name: 'Electric Supports', desc: 'Electric/cable supports, instrument supports.', img: '/img/electric_support.jpg', alt: 'Electric Supports' },
-      { name: 'Other Light Structures', desc: 'Vessel outfitting, foundations, safety protective structures.', img: '/img/outfitting.jpg', alt: 'Other Light Structures' },
+      { name: 'Pipe Supports & Electrical Supports', desc: 'Various pipe supports and electrical supports.', img: '/img/pipe_support.jpg', alt: 'Pipe Supports & Electrical Supports' },
+      { name: 'Equipment Supports', desc: 'Equipment supports.', img: '/img/equipment_support.jpg', alt: 'Equipment Supports' },
+      { name: 'Other Light Structures', desc: 'Vessel outfitting, foundations, safety protective structures.', img: '/img/other_light_structures.jpg', alt: 'Other Light Structures' }
     ],
   },
   records: {

@@ -48,6 +48,11 @@ const org = {
     <link rel="icon" href="/img/logo.ico" type="image/x-icon" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
+    <!-- 微信专属标签（部分版本可能优先读取） -->
+    <meta name="wx.share.title" content={c.title} />
+    <meta name="wx.share.desc" content={c.metaDescription} />
+    <meta name="wx.share.img" content="https://www.stonmetal.cn/img/steel_grating.jpg" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={c.title} />

@@ -161,6 +161,7 @@ a:hover { color: var(--c-accent-light); }
 /* Marketing */
 .marketing-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
 .marketing-grid img { border-radius: var(--radius); box-shadow: var(--shadow-md); width: 100%; }
+.marketing-intro { font-size: 17px; color: #2d3748; margin-bottom: 28px; }
 .events-list { list-style: none; }
 .events-list li {
   display: flex; justify-content: space-between; align-items: center;
