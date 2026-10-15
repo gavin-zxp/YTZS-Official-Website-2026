@@ -74,8 +74,6 @@ export interface Content {
       details: string[];
     }[];
     certsNote: string;
-    certsPdfLabel: string;
-    certsPdf: string;
   };
   contact: {
     title: string;
@@ -249,9 +247,7 @@ const zh: Content = {
         details: ['证书编号：24CN34512162S', '有效期：2024-11-05 至 2027-11-04', '发证机构：ACM International Certification Limited'],
       },
     ],
-    certsNote: '认证范围：钢格板和钢结构产品（斜梯、栏杆、结构平台）的加工和销售。证书经 IAF 与 IAS 认可，可在发证机构网站（www.acmchina.com）及中国国家认证认可监督管理委员会网站（www.cnca.gov.cn）查询。',
-    certsPdfLabel: '查看证书原件（PDF）',
-    certsPdf: '/certificates.pdf',
+    certsNote: '认证范围：钢格板和钢结构产品（斜梯、栏杆、结构平台）的加工和销售。证书经 IAF 与 IAS 认可，可在发证机构网站（www.acmchina.com）及中国国家认证认可监督管理委员会网站（www.cnca.gov.cn）查询。'
   },
   contact: {
     title: '联系我们',
@@ -436,9 +432,7 @@ const en: Content = {
         details: ['Certificate No.: 24CN34512162S', 'Valid: 2024-11-05 to 2027-11-04', 'Issued by: ACM International Certification Limited'],
       },
     ],
-    certsNote: 'Certification scope: processing and sales of steel grid plate and steel structure products (inclined ladder, railing and structural platform). The certificates are accredited by IAF and IAS and can be verified at www.acmchina.com and www.cnca.gov.cn.',
-    certsPdfLabel: 'View original certificates (PDF)',
-    certsPdf: '/certificates.pdf',
+    certsNote: 'Certification scope: processing and sales of steel grid plate and steel structure products (inclined ladder, railing and structural platform). The certificates are accredited by IAF and IAS and can be verified at www.acmchina.com and www.cnca.gov.cn.'
   },
   contact: {
     title: 'Contact Us',

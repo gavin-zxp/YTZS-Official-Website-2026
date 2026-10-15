@@ -226,12 +226,6 @@ a:hover { color: var(--c-accent-light); }
 .qc-cert-card ul { list-style: none; }
 .qc-cert-card li { font-size: 13px; color: var(--c-muted); line-height: 1.7; }
 .qc-certs-note { font-size: 13px; color: var(--c-muted); line-height: 1.8; margin-bottom: 20px; }
-.qc-certs-link {
-  display: inline-block; padding: 10px 24px;
-  border: 1.5px solid var(--c-accent); border-radius: 999px;
-  font-size: 14px; color: var(--c-accent); transition: all .15s;
-}
-.qc-certs-link:hover { background: var(--c-accent); color: #fff; }
 
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
