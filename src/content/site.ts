@@ -141,8 +141,8 @@ const zh: Content = {
     intro: '我们拥有一支小而精的团队，平均行业经验10年，多数成员自2020年起与公司共同成长。',
     categories: [
       { label: '管理层', members: '李慧鹏、李梦然' },
-      { label: '项目团队', members: '张婷婷、牟一帆、李慧慷、李妤墨、何世峰、刘兴乾' },
-      { label: '车间管理', members: '侯万鹏' },
+      { label: '项目团队', members: '张婷婷、牟一帆、李慧慷、李妤墨、何世峰、刘兴乾、于文海' },
+      { label: '车间管理', members: '吕彬' },
     ],
     img: '/img/our_team.jpg',
     imgAlt: '烟台众昇金属结构有限公司团队合影',
@@ -326,8 +326,8 @@ const en: Content = {
     intro: 'We have a small but diligent team, with an average of 10 years of industry experience. Most members have been with us since 2020.',
     categories: [
       { label: 'Management', members: 'Mr. Li Huipeng & Ms. Li Mengran' },
-      { label: 'Project Team', members: 'Ms. Zhang Tingting, Ms. Mu Yifan, Mr. Li Huikang, Ms. Li Yumo, Mr. He Shifeng, Mr. Liu Xingqian' },
-      { label: 'Workshop Management', members: 'Mr. Hou Wanpeng' },
+      { label: 'Project Team', members: 'Ms. Zhang Tingting, Ms. Mou Yifan, Mr. Li Huikang, Ms. Li Yumo, Mr. He Shifeng, Mr. Liu Xingqian, Mr. Yu Wenhai' },
+      { label: 'Workshop Management', members: 'Mr. Lv Bin' },
     ],
     img: '/img/our_team.jpg',
     imgAlt: 'Yantai Ston Metal team photo',
